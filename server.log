@@ -1,0 +1,114 @@
+Dec 12, 2023 4:26:44 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 4:37:05 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 4:43:22 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 4:47:34 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 5:04:07 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 5:07:05 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 5:12:44 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 5:21:56 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 5:21:56 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 12, 2023 5:31:44 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 5:31:44 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 12, 2023 5:33:13 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 5:33:56 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 5:33:56 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 12, 2023 5:48:49 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 5:48:49 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 12, 2023 10:06:40 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 12, 2023 10:06:40 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:00:20 AM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 13, 2023 12:00:20 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:04:34 AM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 13, 2023 12:04:34 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:04:34 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:04:34 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:04:34 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:04:34 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:04:34 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:06:31 AM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 13, 2023 12:06:31 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:06:31 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:06:31 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:06:31 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:06:31 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:06:31 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:19:49 AM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 13, 2023 12:19:49 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:19:49 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:19:49 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:19:49 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:19:49 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:19:49 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:25:56 AM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 13, 2023 12:25:56 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:25:56 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:25:56 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:25:56 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:25:56 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:25:56 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:31:39 AM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 13, 2023 12:31:39 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:31:39 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:31:39 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:31:39 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:31:39 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:31:39 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 12:31:39 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 13, 2023 1:31:35 AM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
