@@ -3,6 +3,11 @@
 ## Project Description
 Backend do projecto de CD. Contém o RMI Server e trata da persistencia dos dados por via de ficheiros.
 
+- Package Server: RMI Server
+- Package Client: RMI Client para testes 
+- Package Reservations: Classes de dados - Ler e escrever para ficheros
+
+
 ## Instructions
 1. Run: 
 ```bash
@@ -30,7 +35,10 @@ docker-compose up
 
 ### Todo
 - [ ] Afinar inicialização para prever as sombrinhas e respectivas capacidades
-- [ ]
+- [ ] Verificações na persistencia de dados. Se mantem a consistencia e estado 
+  - [ ] Deve guardar para a pasta output-files. ainda nao o faz
+- [ ] Criação de novas reservas. Questao do maximo de sombrinhas disponiveis
+  - [ ] Fazer um enum ?? 
 
 
 #### Helpers
