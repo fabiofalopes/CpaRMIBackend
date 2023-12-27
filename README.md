@@ -7,7 +7,6 @@ Backend do projecto de CD. Contém o RMI Server e trata da persistencia dos dado
 - Package Client: RMI Client para testes 
 - Package Reservations: Classes de dados - Ler e escrever para ficheros
 
-
 ## Instructions
 1. Run: 
 ```bash
@@ -51,3 +50,7 @@ watch -n 1 'sudo netstat -pnlt | grep 1099'
 ```bash
 sudo tcpdump -i lo -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"
 ```
+
+# Current Project Structure
+
+[current_project_structure.drawio](current_project_structure.drawio)
