@@ -18,6 +18,15 @@ java -jar rmi_server.jar
 java -jar rmi_cliente.jar localhost
 ```
 
+## Em docker
+1. Build:
+```bash
+docker-compose build
+```
+2. Run:
+```bash
+docker-compose up
+```
 
 ### Todo
 - [ ] Afinar inicialização para prever as sombrinhas e respectivas capacidades

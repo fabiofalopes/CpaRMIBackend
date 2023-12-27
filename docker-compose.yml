@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  rmi_server:
+    container_name: rmi_server
+    build: .
+    ports:
+      - '1099:1099'
+    environment:
+      RMI_REMOTE_PORT: 1099
+      RMI_REMOTE_HOST: localhost
+    tty: true
+    network_mode: bridge
