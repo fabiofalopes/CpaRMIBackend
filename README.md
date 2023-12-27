@@ -32,3 +32,14 @@ docker-compose up
 - [ ] Afinar inicialização para prever as sombrinhas e respectivas capacidades
 - [ ]
 
+
+#### Helpers
+# Java RMI
+```bash
+watch -n 1 'sudo netstat -pnlt | grep 1099'
+```
+
+# localhost port traffic monitoring
+```bash
+sudo tcpdump -i lo -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"
+```
