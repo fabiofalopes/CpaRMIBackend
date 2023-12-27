@@ -1,58 +1,161 @@
 package Reservation;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.io.IOException;
+import java.util.stream.Collectors;
 
 public class ReservaUtility {
-    private List<Reserva> reservas;
-    //private HashMap<String, Reserva> res;
 
-    public ReservaUtility() {
-        this.reservas = new ArrayList<>();
-        //reservas = loadRentalsFromFile("input-files/init.txt");
-        loadRentalsFromFile("input-files/init.txt");
+    private TreeMap<Integer, Reserva> reservas = new TreeMap<>();
+
+    public ReservaUtility(){
+        if (Files.exists(Paths.get("output-files/reservas.txt"))) {
+            loadFromFile("output-files/reservas.txt");
+        }
+        else {
+            loadFromFile("input-files/persistence.txt");
+        }
     }
 
-    public List<Reserva> getReservas() {
-        return reservas;
-    }
-
-
-    public void loadRentalsFromFile(String filePath) {
-        List<Reserva> rentals = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] fields = line.split("\\|");
-                if (fields.length == 6) {
-                    String idPraia = fields[0]; // id da praia: A, B, C, D, E...
-                    int idSombrinha = Integer.parseInt(fields[1]); // id da sombrinha : 1, 2, 3, 4, 5...
-                    int maxPessoas = Integer.parseInt(fields[2]); // 2, 3 ou 4
-                    int disponivel = Integer.parseInt(fields[3]); // 0 - false, 1 - true
-                    String horaInicioAluguerAtual = fields[4];  // formato HH:MM
-                    String horaFimAluguerAtual = fields[5];    // formato HH:MM
-                    // Adiciona a reserva à lista de reservas
-                    reservas.add(new Reserva(idPraia, idSombrinha, maxPessoas, disponivel, horaInicioAluguerAtual, horaFimAluguerAtual));
-                } else {
-                    // Handle error or invalid line format
-                    System.err.println("Invalid line format: " + line);
-                }
+    public void loadFromFile(String filePath) {
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        int idReserva = 1;
+        try {
+            List<String> lines = Files.readAllLines(Paths.get(filePath));
+            for (String line : lines) {
+                String[] parts = line.split("\\|");
+                String idPraia = parts[0];
+                int idSombrinha = Integer.parseInt(parts[1]);
+                int maxPessoas = Integer.parseInt(parts[2]);
+                LocalTime time = LocalTime.parse(parts[3], timeFormatter);
+                LocalDate date = LocalDate.parse(parts[4], dateFormatter);
+                LocalDateTime hora = LocalDateTime.of(date, time);
+                Sombrinha sombrinha = new Sombrinha(idPraia, idSombrinha, maxPessoas);
+                Reserva reserva = new Reserva(idReserva++, hora,  sombrinha);
+                reservas.put(idReserva, reserva);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void insertReserva(String idPraia, int idSombrinha, int maxPessoas, int disponivel, String horaInicioAluguerAtual, String horaFimAluguerAtual) {
-        reservas.add(new Reserva(idPraia, idSombrinha, maxPessoas, disponivel, horaInicioAluguerAtual, horaFimAluguerAtual));
+
+    public void saveToFile(String filePath) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm|dd-MM-yyyy");
+        try {
+            List<String> lines = reservas.values().stream()
+                    .map(reserva -> {
+                        Sombrinha sombrinha = reserva.getSombrinha();
+                        LocalDateTime hora = reserva.getHora();
+                        return sombrinha.getIdPraia() + "|" +
+                                sombrinha.getIdSombrinha() + "|" +
+                                sombrinha.getMaxPessoas() + "|" +
+                                hora.format(formatter);
+                    })
+                    .collect(Collectors.toList());
+            Files.write(Paths.get(filePath), lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    public void SaveRentalsToFile(String filePath, List<Reserva> rentals) {
-        // TODO: implement this method
+
+    public void backup() {
+        // Save to files
+        saveToFile("output-files/reservas.txt");
+        saveToFile("output-files/reservas-bk.txt");
     }
+    public boolean inserirReserva(LocalDateTime hora, String idPraia , int idSombrinha) {
+        //Sombrinha sombrinha = reservas.get(hora).getSombrinha();
+        Sombrinha sombrinha = new Sombrinha(idPraia, idSombrinha, 4);
+        if (verificarDisponibilidade(hora, sombrinha)) {
+            int nextId = reservas.isEmpty() ? 1 : reservas.lastKey() + 1;
+            Reserva reserva = new Reserva(nextId, hora, sombrinha);
+            reservas.put(reserva.getIdReserva(), reserva);
+            return true;
+        }
+        return false;
+    }
+    public boolean verificarDisponibilidade(LocalDateTime hora, Sombrinha sombrinha) {
+        for (Integer i : reservas.keySet()) {
+            Reserva reserva = reservas.get(i);
+            if (reserva.getHora().equals(hora) && reserva.getSombrinha().equals(sombrinha)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public boolean cancelarReserva(int idReserva) {
+        for (Map.Entry<Integer, Reserva> entry : reservas.entrySet()) {
+            if (entry.getValue().getIdReserva() == idReserva) {
+                reservas.remove(entry.getKey());
+                backup();
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean cancelarReserva(LocalDateTime hora , Sombrinha sombrinha) {
+        for (Map.Entry<Integer, Reserva> entry : reservas.entrySet()) {
+            if (entry.getValue().getHora().equals(hora) && entry.getValue().getSombrinha().equals(sombrinha)) {
+                reservas.remove(entry.getKey());
+                // Save to files
+                backup();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void listarReservas() {
+        reservas.forEach((key, value) -> System.out.println(value));
+    }
+
+    // Devolve String com uma tabela ordenada por datas de marcação
+    public String toStringTable() {
+
+        TreeMap<LocalDateTime, Reserva> newMap = new TreeMap<>();
+
+        for (Map.Entry<Integer, Reserva> entry : reservas.entrySet()) {
+            Reserva reserva = entry.getValue();
+            newMap.put(reserva.getHora(), reserva);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        // Table header
+        String headerFormat = "%-10s | %-12s | %-11s | %-11s | %-22s%n";
+        sb.append(String.format(headerFormat, "idReserva", "idPraia", "idSombrinha", "maxPessoas", "marcacao"));
+        sb.append(String.format(headerFormat, "----------", "------------", "-----------", "-----------", "----------------------"));
+
+        // Table rows
+        String rowFormat = "%-10d | %-12s | %-11d | %-11d | %-22s%n";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy ");
+        for (Map.Entry<LocalDateTime, Reserva> entry : newMap.entrySet()) {
+            Reserva reserva = entry.getValue();
+            sb.append(String.format(rowFormat,
+                    reserva.getIdReserva(),
+                    reserva.getSombrinha().getIdPraia(),
+                    reserva.getSombrinha().getIdSombrinha(),
+                    reserva.getSombrinha().getMaxPessoas(),
+                    reserva.getHora().format(formatter)
+            ));
+        }
+        return sb.toString();
+    }
+
+
+
+}
+
+/*
+
     public String toStringAll() {
         // idPraia | idSombrinha | maxPessoas | disponivel | horaInicioAluguerAtual | horaFimAluguerAtual
         String sb = "";
@@ -61,23 +164,7 @@ public class ReservaUtility {
         }
         return sb;
     }
-    public boolean reservaSombrinha(String idPraia, int id_sombrinha, String horaInicio, String horaFim){
-        if (verificaDisponibilidade(idPraia, id_sombrinha, horaInicio, horaFim)){
-            for (Reserva reserva : reservas) {
-                if(reserva.idPraia().equals(idPraia) &&
-                    reserva.idSombrinha() == id_sombrinha &&
-                    reserva.disponivel() == 1
-                ){
 
-                }
-            }
-        }
-        return false;
-    }
-    public boolean cancelaReserva(String idPraia, int id_sombrinha){
-        //TODO: implement this method
-        return false;
-    }
     public String toStringReserva(String idPraia, int id_sombrinha){
         for (Reserva reserva : reservas) {
             if(reserva.idPraia().equals(idPraia) && reserva.idSombrinha() == id_sombrinha){
@@ -87,48 +174,7 @@ public class ReservaUtility {
         return "Reserva não encontrada!";
     }
 
-    public String getIdSombrinhasDisponivel(){
-        String sb = "";
-        for (Reserva reserva : reservas) {
-            if(reserva.disponivel() == 1){
-                sb += reserva.idPraia() + "|" + reserva.idSombrinha() +  "\n";
-            }
-        }
-        return sb;
-    }
-
-    public String getInfoSombrinha(String idPraia, int id_sombrinha){
-        for (Reserva reserva : reservas) {
-            if(reserva.idPraia().equals(idPraia) && reserva.idSombrinha() == id_sombrinha){
-                return reserva.toString();
-            }
-        }
-        return "Sombrinha não encontrada!";
-    }
-
-    public String getSombrinhasOcupadas(){
-        String sb = "";
-        // idPraia | idSombrinha | maxPessoas | disponivel | horaInicioAluguerAtual | horaFimAluguerAtual
-        for (Reserva reserva : reservas) {
-            if(reserva.disponivel() == 0){
-                sb += reserva.idPraia() + "|" + reserva.idSombrinha() + "|" + reserva.maxPessoas() + "|" + reserva.horaInicioAluguerAtual() + "|" + reserva.horaFimAluguerAtual() + "\n";
-            }
-        }
-        return sb;
-    }
-
-    public boolean verificaDisponibilidade(String idPraia, int id_sombrinha, String horaInicio, String horaFim){
-        for (Reserva reserva : reservas) {
-            if(reserva.idPraia().equals(idPraia) && reserva.idSombrinha() == id_sombrinha){
-                if(reserva.disponivel() == 1){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public String toStringALL() {
+public String toStringALL() {
         StringBuilder sb = new StringBuilder();
         // Table header
         String headerFormat = "%-10s | %-12s | %-11s | %-11s | %-22s | %-22s%n";
@@ -172,4 +218,4 @@ public class ReservaUtility {
         return sb.toString();
     }
 
-}
+ */

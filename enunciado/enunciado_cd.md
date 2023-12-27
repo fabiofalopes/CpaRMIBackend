@@ -1,6 +1,7 @@
 CD-DEISI/ULHT 1
 
 Computação distribuída 2023/2024
+Computação distribuída 2023/2024
 
 # Projecto Concessionário Praias Algarve
 

@@ -3,6 +3,8 @@ package Client;
 import Server.RentalsServerIntf;
 
 import java.rmi.*;
+import java.time.LocalDateTime;
+
 public class RentalsClient {
     public static void main(String args[]) {
 
@@ -19,45 +21,32 @@ public class RentalsClient {
 
             System.out.println(rentalsServerIntf.listAllMethods());
 
-            System.out.println(rentalsServerIntf.listaConteudos());
+            // Print table de reservas que vem em String
+            System.out.println(rentalsServerIntf.getReservasTable());
 
-            if (rentalsServerIntf.reservaSombrinha("B", 2, "10:00", "12:00")) {
+            if (rentalsServerIntf.reservaSombrinha(
+                    LocalDateTime.of(2024, 1, 1, 8, 0),
+                    "A",
+                    1))
+            {
                 System.out.println("Reserva efetuada com sucesso!");
+                System.out.println(); // Blank line
             } else {
                 System.out.println("Reserva não efetuada!");
+                System.out.println(); // Blank line
             }
 
-            System.out.println(rentalsServerIntf.displayReserva("B", 2));
-            System.out.println();
-            System.out.println(rentalsServerIntf.displayReserva("C", 3));
 
-            System.out.println(rentalsServerIntf.listaConteudos());
-            // breakline
-            System.out.println();
-            System.out.println(rentalsServerIntf.getIdSombrinhasDisponivel());
+            rentalsServerIntf.reservaSombrinha(
+                    LocalDateTime.of(2024, 1, 21, 8, 0),
+                    "B",
+                    1);
+            rentalsServerIntf.reservaSombrinha(
+                    LocalDateTime.of(2024, 1, 11, 8, 0),
+                    "A",
+                    1);
 
-
-            rentalsServerIntf.reservaSombrinha("B", 2, "10:00", "12:00");
-            rentalsServerIntf.reservaSombrinha("B", 2, "14:00", "15:00");
-            rentalsServerIntf.reservaSombrinha("B", 2, "16:00", "17:00");
-            rentalsServerIntf.reservaSombrinha("B", 2, "19:00", "20:00");
-            rentalsServerIntf.reservaSombrinha("B", 2, "21:00", "22:00");
-            rentalsServerIntf.reservaSombrinha("B", 3, "10:00", "11:00");
-            rentalsServerIntf.reservaSombrinha("B", 4, "10:00", "12:00");
-            rentalsServerIntf.reservaSombrinha("B", 5, "10:00", "14:00");
-            rentalsServerIntf.reservaSombrinha("B", 6, "10:00", "12:00");
-            rentalsServerIntf.reservaSombrinha("B", 7, "09:00", "11:00");
-            rentalsServerIntf.reservaSombrinha("A", 8, "10:00", "12:00");
-            rentalsServerIntf.reservaSombrinha("A", 8, "10:00", "12:00");
-            rentalsServerIntf.reservaSombrinha("A", 8, "15:00", "18:00");
-            rentalsServerIntf.reservaSombrinha("A", 8, "10:00", "12:00");
-            rentalsServerIntf.reservaSombrinha("A", 8, "10:00", "12:00");
-            rentalsServerIntf.reservaSombrinha("A", 8, "10:00", "12:00");
-
-
-
-            System.out.println(rentalsServerIntf.getSombrinhasOcupadas());
-
+            // Print table de reservas que vem em String
             System.out.println(rentalsServerIntf.getReservasTable());
 
         } catch (Exception e) {

@@ -1,16 +1,11 @@
 package Server;
 
-import Reservation.Reserva;
 import Reservation.ReservaUtility;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
 
 import java.lang.reflect.Method;
 import java.rmi.*;
 import java.rmi.server.*;
-import java.util.List;
+import java.time.LocalDateTime;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +15,7 @@ public class RentalsServerImpl extends UnicastRemoteObject  implements RentalsSe
 
     ReservaUtility reservaUtility;
 
-    RentalsServerImpl() throws RemoteException {
+    public RentalsServerImpl() throws RemoteException {
         super();
         this.reservaUtility = new ReservaUtility();
     }
@@ -55,29 +50,13 @@ public class RentalsServerImpl extends UnicastRemoteObject  implements RentalsSe
         return methodsString.toString();
     }
 
-
-    public boolean reservaSombrinha(String idPraia, int id_sombrinha, String horaInicio, String horaFim) throws RemoteException{
-        if (reservaUtility.reservaSombrinha(idPraia, id_sombrinha, horaInicio, horaFim)){
-            logger.log(Level.INFO, "reservaSombrinha method was called."); // Log message when method is called
+    public boolean reservaSombrinha(LocalDateTime hora, String idPraia, int id_sombrinha) throws RemoteException{
+        if (reservaUtility.inserirReserva(hora, idPraia, id_sombrinha)){
+            // Log message when method is called
+            logger.log(Level.INFO, "reservaSombrinha method was called.");
             return true;
         }
         return false;
-    }
-    public String displayReserva(String idPraia, int id_sombrinha) throws RemoteException{
-        return reservaUtility.toStringReserva(idPraia, id_sombrinha);
-    }
-
-
-    public String getIdSombrinhasDisponivel() throws RemoteException{
-        return reservaUtility.getIdSombrinhasDisponivel();
-    }
-
-    public String getSombrinhasOcupadas() throws RemoteException{
-        return reservaUtility.getSombrinhasOcupadas();
-    }
-
-    public String listaConteudos() throws RemoteException{
-        return reservaUtility.toStringAll();
     }
 
     public String getReservasTable() throws RemoteException{
