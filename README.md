@@ -53,4 +53,4 @@ sudo tcpdump -i lo -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"
 
 # Current Project Structure
 
-[current_project_structure.drawio](current_project_structure.drawio)
+![current-diagram.png](current-diagram.png)
