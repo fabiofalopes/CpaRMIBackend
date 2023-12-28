@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 public interface RentalsServerIntf extends Remote{
     String testRMI() throws RemoteException;
     String listAllMethods() throws RemoteException;
-    boolean reservaSombrinha(LocalDateTime hora, String idPraia, int id_sombrinha) throws RemoteException;
+    int reservaSombrinha(LocalDateTime hora, String idPraia, int id_sombrinha) throws RemoteException;
 
     //boolean cancelaReserva(String idPraia, int id_sombrinha) throws RemoteException;
     //boolean alteraReserva(String idPraia, int id_sombrinha, String horaInicio, String horaFim) throws RemoteException;

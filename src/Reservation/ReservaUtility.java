@@ -84,21 +84,19 @@ public class ReservaUtility {
         saveToFile("output-files/reservas-bk.txt");
     }
     // Inserir reserva deve retornar id da reserva
-    public boolean inserirReserva(LocalDateTime hora, String idPraia , int idSombrinha) {
+    public int inserirReserva(LocalDateTime hora, String idPraia , int idSombrinha) {
         int generateId = 1;
         if (!reservas.isEmpty()){  // Se não estiver vazio temos que gerar um id único para a reserva
             generateId = reservas.lastKey() + 1;
             Sombrinha sombrinha = new Sombrinha(idPraia, idSombrinha);
-            if (verificarDisponibilidade(hora, sombrinha) ||
-                reservas.isEmpty()
-            ){
+            if (verificarDisponibilidade(hora, sombrinha)){
                 Reserva reserva = new Reserva(
                         generateId,
                         hora,
                         sombrinha
                 );
                 reservas.put(reserva.getIdReserva(), reserva);
-                return true;
+                return generateId;
             }
         }
         else {
@@ -109,10 +107,9 @@ public class ReservaUtility {
                     sombrinha
             );
             reservas.put(reserva.getIdReserva(), reserva);
-            return true;
+            return generateId;
         }
-
-        return false;
+        return -1;
     }
     public boolean verificarDisponibilidade(LocalDateTime hora, Sombrinha sombrinha) {
         for (Integer i : reservas.keySet()) {

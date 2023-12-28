@@ -11,7 +11,7 @@ public class Reserva {
     private Sombrinha sombrinha;
 
     public Reserva(int idReserva, LocalDateTime hora, Sombrinha sombrinha) {
-        if (!(hora.getHour() >= HORA_INICIO_RESERVAS && hora.getHour() <= HORA_FIM_RESERVAS)
+        if (!(hora.getHour() >= HORA_INICIO_RESERVAS - 1 && hora.getHour() <= HORA_FIM_RESERVAS)
         ){
             throw new IllegalArgumentException("Hora inválida. As reservas são das 8:00 às 20:00.");
         }

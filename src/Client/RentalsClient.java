@@ -24,27 +24,21 @@ public class RentalsClient {
             // Print table de reservas que vem em String
             System.out.println(rentalsServerIntf.getReservasTable());
 
-            if (rentalsServerIntf.reservaSombrinha(
-                    LocalDateTime.of(2024, 1, 1, 8, 0),
-                    "A",
-                    1))
-            {
-                System.out.println("Reserva efetuada com sucesso!");
-                System.out.println(); // Blank line
-            } else {
-                System.out.println("Reserva não efetuada!");
-                System.out.println(); // Blank line
-            }
-
-
-            rentalsServerIntf.reservaSombrinha(
+            int id1 = rentalsServerIntf.reservaSombrinha(
+                    LocalDateTime.of(2024, 1, 22, 8, 0),
+                    "B",
+                    1);
+            System.out.println("nova reserva id1: " + id1);
+            int id2 = rentalsServerIntf.reservaSombrinha(
                     LocalDateTime.of(2024, 1, 21, 8, 0),
                     "B",
                     1);
-            rentalsServerIntf.reservaSombrinha(
+            System.out.println("nova reserva id2: " + id2);
+            int id3 = rentalsServerIntf.reservaSombrinha(
                     LocalDateTime.of(2024, 1, 11, 8, 0),
                     "A",
                     1);
+            System.out.println("nova reserva id3: " + id3);
 
             // Print table de reservas que vem em String
             System.out.println(rentalsServerIntf.getReservasTable());
