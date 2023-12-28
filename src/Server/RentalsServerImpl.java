@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
 import java.rmi.*;
 import java.rmi.server.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -55,6 +56,16 @@ public class RentalsServerImpl extends UnicastRemoteObject  implements RentalsSe
         int id = reservaUtility.inserirNovaReserva(hora, idPraia, id_sombrinha);
         logger.log(Level.INFO, "reservaSombrinha method was called.");
         return id;
+    }
+
+    public int cancelaReserva(LocalDateTime hora , String idPraia, int idSombrinha) throws RemoteException{
+        logger.log(Level.INFO, "cancelaReserva method was called.");
+        return reservaUtility.cancelarReserva(hora, idPraia, idSombrinha);
+    }
+
+    public ArrayList<String> listaSombrinhasDisponiveis(LocalDateTime hora , String idPraia) throws RemoteException{
+        logger.log(Level.INFO, "listaSombrinhasDisponiveis method was called.");
+        return reservaUtility.listaSombrinhasDisponiveis(hora, idPraia);
     }
 
     public String getReservasTable() throws RemoteException{

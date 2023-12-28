@@ -246,3 +246,13 @@ Dec 28, 2023 3:56:33 PM Server.RentalsServerImpl reservaSombrinha
 INFO: reservaSombrinha method was called.
 Dec 28, 2023 3:58:29 PM Server.RentalsServerImpl reservaSombrinha
 INFO: reservaSombrinha method was called.
+Dec 28, 2023 4:14:53 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 28, 2023 4:16:28 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 28, 2023 4:16:28 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 28, 2023 4:16:28 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 28, 2023 4:16:28 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.

@@ -24,6 +24,7 @@ public class RentalsClient {
             // Print table de reservas que vem em String
             System.out.println(rentalsServerIntf.getReservasTable());
 
+            System.out.println("Se -1 é porque não foi possível reservar");
             int id1 = rentalsServerIntf.reservaSombrinha(
                     LocalDateTime.of(2024, 1, 22, 8, 0),
                     "B",
