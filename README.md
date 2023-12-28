@@ -35,7 +35,8 @@ docker-compose up
 ### Todo
 - [ ] Verificar: Consistencia com a persistencia de dados.
 - [ ] Issue: Cancelamento de reservas esta a gerar ids novos a cada cancelamento por faz sempre um backup e le de novo para o TreeMap reservas
-
+- [ ] Todo: Metodo inserirReserva da ReservaUtility deve retornar id da reserva
+- [ ] Todo: Solve issue dos ids unicos e finais das reservas - gravar e ler em ficheiro
 
 #### Helpers
 # Java RMI

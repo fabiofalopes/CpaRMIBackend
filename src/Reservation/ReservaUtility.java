@@ -83,6 +83,7 @@ public class ReservaUtility {
         saveToFile("output-files/reservas.txt");
         saveToFile("output-files/reservas-bk.txt");
     }
+    // Inserir reserva deve retornar id da reserva
     public boolean inserirReserva(LocalDateTime hora, String idPraia , int idSombrinha) {
         int generateId = 1;
         if (!reservas.isEmpty()){  // Se não estiver vazio temos que gerar um id único para a reserva
