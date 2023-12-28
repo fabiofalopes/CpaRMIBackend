@@ -52,7 +52,7 @@ public class RentalsServerImpl extends UnicastRemoteObject  implements RentalsSe
     }
 
     public int reservaSombrinha(LocalDateTime hora, String idPraia, int id_sombrinha) throws RemoteException{
-        int id = reservaUtility.inserirReserva(hora, idPraia, id_sombrinha);
+        int id = reservaUtility.inserirNovaReserva(hora, idPraia, id_sombrinha);
         logger.log(Level.INFO, "reservaSombrinha method was called.");
         return id;
     }
