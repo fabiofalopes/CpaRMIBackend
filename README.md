@@ -39,6 +39,13 @@ docker-compose up
 - [x] Todo: Metodos inserirReserva da ReservaUtility devem retornar id da reserva
 - [x] Todo: Solve issue dos ids unicos e finais das reservas - gravar e ler em ficheiro
 - [ ] Work on server logs: methods calls, errors, etc
+- [ ] 1- Registo do user (email e password)
+- [ ] 2- Login (Prende o userid na sessão)
+- [ ] 3- Registar Sombrinha - Obriga a ter um user id, após o login o userid é enviado em todos os metodos para o frontend para validar se existe
+- [ ] 4- CheckUsedID
+- [ ] 5- Cancelar Sombrinha - Obriga a ter um user id para cancelar apenas as sobrinhas do user autenticado
+- [ ] 6- listarsombrinhas ex: A 19-10-2024 10:00
+
   - On going 
   
 
