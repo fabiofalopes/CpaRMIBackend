@@ -13,15 +13,23 @@ import java.io.IOException;
 import java.util.stream.Collectors;
 
 public class ReservaUtility {
-
     private TreeMap<Integer, Reserva> reservas = new TreeMap<>();
 
     public ReservaUtility(){
+        // Se existir uma sessão anterior, carregar do ficheiro de output
         if (Files.exists(Paths.get("output-files/reservas.txt"))) {
             loadFromFile("output-files/reservas.txt");
         }
         else {
+            // Caso contrário, carregar do ficheiro de input e iniciar sessão teste
             loadFromFile("input-files/persistence.txt");
+        }
+    }
+
+    public void updateStateFromFile() {
+        // Se existir uma sessão anterior, carregar do ficheiro de output
+        if (Files.exists(Paths.get("output-files/reservas.txt"))) {
+            loadFromFile("output-files/reservas.txt");
         }
     }
 
@@ -35,17 +43,20 @@ public class ReservaUtility {
                 String[] parts = line.split("\\|");
                 String idPraia = parts[0];
                 int idSombrinha = Integer.parseInt(parts[1]);
-                int maxPessoas = Integer.parseInt(parts[2]);
+                //int maxPessoas = Integer.parseInt(parts[2]);
                 LocalTime time = LocalTime.parse(parts[3], timeFormatter);
                 LocalDate date = LocalDate.parse(parts[4], dateFormatter);
                 LocalDateTime hora = LocalDateTime.of(date, time);
-                Sombrinha sombrinha = new Sombrinha(idPraia, idSombrinha, maxPessoas);
+                Sombrinha sombrinha = new Sombrinha(idPraia, idSombrinha);
                 Reserva reserva = new Reserva(idReserva++, hora,  sombrinha);
-                reservas.put(idReserva, reserva);
+                //reservas.put(idReserva, reserva);
+                inserirReserva(hora, idPraia, idSombrinha);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // Save current state to output-files/reservas.txt e output-files/reservas-bk.txt
+        backup();
     }
 
     public void saveToFile(String filePath) {
@@ -73,14 +84,33 @@ public class ReservaUtility {
         saveToFile("output-files/reservas-bk.txt");
     }
     public boolean inserirReserva(LocalDateTime hora, String idPraia , int idSombrinha) {
-        //Sombrinha sombrinha = reservas.get(hora).getSombrinha();
-        Sombrinha sombrinha = new Sombrinha(idPraia, idSombrinha, 4);
-        if (verificarDisponibilidade(hora, sombrinha)) {
-            int nextId = reservas.isEmpty() ? 1 : reservas.lastKey() + 1;
-            Reserva reserva = new Reserva(nextId, hora, sombrinha);
+        int generateId = 1;
+        if (!reservas.isEmpty()){  // Se não estiver vazio temos que gerar um id único para a reserva
+            generateId = reservas.lastKey() + 1;
+            Sombrinha sombrinha = new Sombrinha(idPraia, idSombrinha);
+            if (verificarDisponibilidade(hora, sombrinha) ||
+                reservas.isEmpty()
+            ){
+                Reserva reserva = new Reserva(
+                        generateId,
+                        hora,
+                        sombrinha
+                );
+                reservas.put(reserva.getIdReserva(), reserva);
+                return true;
+            }
+        }
+        else {
+            Sombrinha sombrinha = new Sombrinha(idPraia, idSombrinha);
+            Reserva reserva = new Reserva(
+                    generateId,
+                    hora,
+                    sombrinha
+            );
             reservas.put(reserva.getIdReserva(), reserva);
             return true;
         }
+
         return false;
     }
     public boolean verificarDisponibilidade(LocalDateTime hora, Sombrinha sombrinha) {
@@ -97,17 +127,21 @@ public class ReservaUtility {
             if (entry.getValue().getIdReserva() == idReserva) {
                 reservas.remove(entry.getKey());
                 backup();
+                updateStateFromFile();
                 return true;
             }
         }
         return false;
     }
-    public boolean cancelarReserva(LocalDateTime hora , Sombrinha sombrinha) {
+    public boolean cancelarReserva(LocalDateTime hora , String idPraia, int idSombrinha) {
         for (Map.Entry<Integer, Reserva> entry : reservas.entrySet()) {
-            if (entry.getValue().getHora().equals(hora) && entry.getValue().getSombrinha().equals(sombrinha)) {
+            if (entry.getValue().getHora().equals(hora) &&
+                entry.getValue().getSombrinha().equals(new Sombrinha(idPraia, idSombrinha)))
+            {
                 reservas.remove(entry.getKey());
                 // Save to files
                 backup();
+                updateStateFromFile();
                 return true;
             }
         }

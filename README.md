@@ -33,11 +33,8 @@ docker-compose up
 ```
 
 ### Todo
-- [ ] Afinar inicialização para prever as sombrinhas e respectivas capacidades
-- [ ] Verificações na persistencia de dados. Se mantem a consistencia e estado 
-  - [ ] Deve guardar para a pasta output-files. ainda nao o faz
-- [ ] Criação de novas reservas. Questao do maximo de sombrinhas disponiveis
-  - [ ] Fazer um enum ?? 
+- [ ] Verificar: Consistencia com a persistencia de dados.
+- [ ] Issue: Cancelamento de reservas esta a gerar ids novos a cada cancelamento por faz sempre um backup e le de novo para o TreeMap reservas
 
 
 #### Helpers

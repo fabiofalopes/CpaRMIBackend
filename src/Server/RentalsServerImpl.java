@@ -1,6 +1,7 @@
 package Server;
 
 import Reservation.ReservaUtility;
+import Reservation.Sombrinha;
 
 import java.lang.reflect.Method;
 import java.rmi.*;
