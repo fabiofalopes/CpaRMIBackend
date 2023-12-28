@@ -38,6 +38,7 @@ docker-compose up
 - [ ] Todo: Metodos inserirReserva e verificarDisponibilidade da ReservaUtility devem retornar id da reserva
 - [ ] Todo: Solve issue dos ids unicos e finais das reservas - gravar e ler em ficheiro
   - A meio de tratar no metodo inserirReserva da ReservaUtility
+- [ ] Work on server logs: methods calls, errors, etc
   
 
 #### Helpers
