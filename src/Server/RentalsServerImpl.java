@@ -1,7 +1,6 @@
 package Server;
 
 import Reservation.ReservaUtility;
-import Reservation.Sombrinha;
 
 import java.lang.reflect.Method;
 import java.rmi.*;
@@ -60,7 +59,7 @@ public class RentalsServerImpl extends UnicastRemoteObject  implements RentalsSe
 
     public int cancelaReserva(LocalDateTime hora , String idPraia, int idSombrinha) throws RemoteException{
         logger.log(Level.INFO, "cancelaReserva method was called.");
-        return reservaUtility.cancelarReserva(hora, idPraia, idSombrinha);
+        return reservaUtility.removeReserva(hora, idPraia, idSombrinha);
     }
 
     public ArrayList<String> listaSombrinhasDisponiveis(LocalDateTime hora , String idPraia) throws RemoteException{

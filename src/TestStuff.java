@@ -99,7 +99,7 @@ public class TestStuff {
         ReservaUtility ru = new ReservaUtility();
         ru.loadFromFile("input-files/persistence.txt");
         System.out.println(ru.toStringTable());
-        ru.cancelarReserva(LocalDateTime.of(2024, 11, 23, 15, 0), "B", 1);
+        ru.removeReserva(LocalDateTime.of(2024, 11, 23, 15, 0), "B", 1);
         System.out.println(ru.toStringTable());
     }
 
@@ -110,10 +110,10 @@ public class TestStuff {
         //ru.loadFromFile("input-files/persistence.txt");
         System.out.println("Reservas atuais:");
         System.out.println(ru.toStringTable());
-        ru.cancelarReserva(LocalDateTime.of(2024, 11, 22, 16, 0), "B", 3);
-        ru.cancelarReserva(LocalDateTime.of(2024, 4, 2, 8, 0), "C", 1);
-        ru.cancelarReserva(LocalDateTime.of(2024, 11, 22, 9, 0), "A", 3);
-        ru.cancelarReserva(LocalDateTime.of(2024, 11, 22, 10, 0), "A", 3);
+        ru.removeReserva(LocalDateTime.of(2024, 11, 22, 16, 0), "B", 3);
+        ru.removeReserva(LocalDateTime.of(2024, 4, 2, 8, 0), "C", 1);
+        ru.removeReserva(LocalDateTime.of(2024, 11, 22, 9, 0), "A", 3);
+        ru.removeReserva(LocalDateTime.of(2024, 11, 22, 10, 0), "A", 3);
         System.out.println("Reservas apos cancelamentos:");
         System.out.println(ru.toStringTable());
         ru.inserirNovaReserva(LocalDateTime.of(2024, 11, 23, 19, 0), "B", 1);

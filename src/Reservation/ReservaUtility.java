@@ -123,7 +123,7 @@ public class ReservaUtility {
         }
         return true;
     }
-    public int cancelarReserva(LocalDateTime hora , String idPraia, int idSombrinha) {
+    public int removeReserva(LocalDateTime hora , String idPraia, int idSombrinha) {
         for (Map.Entry<Integer, Reserva> entry : reservas.entrySet()) {
             if (entry.getValue().getHora().equals(hora) &&
                 entry.getValue().getSombrinha().equals(new Sombrinha(idPraia, idSombrinha)))
