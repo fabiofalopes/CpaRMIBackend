@@ -50,24 +50,35 @@ public class RentalsServerImpl extends UnicastRemoteObject  implements RentalsSe
         return methodsString.toString();
     }
 
-    public int reservaSombrinha(LocalDateTime hora, String idPraia, int id_sombrinha) throws RemoteException{
+    public int reservaSombrinha(int horario, String data, String idPraia, int id_sombrinha) throws RemoteException{
+        // LocalDateTime hora
+        // String data format: Ex: 2020-12-31
+        // int horario format: Ex: 9
+        LocalDateTime hora = LocalDateTime.of(Integer.parseInt(data.split("-")[0]), Integer.parseInt(data.split("-")[1]), Integer.parseInt(data.split("-")[2]), horario, 0);
         int id = reservaUtility.inserirNovaReserva(hora, idPraia, id_sombrinha);
         logger.log(Level.INFO, "reservaSombrinha method was called.");
         return id;
     }
 
-    public int cancelaReserva(LocalDateTime hora , String idPraia, int idSombrinha) throws RemoteException{
+    public int cancelaReserva(int horario, String data, String idPraia, int idSombrinha) throws RemoteException{
+        // LocalDateTime hora
+        // String data format: Ex: 2020-12-31
+        // int horario format: Ex: 9
+        LocalDateTime hora = LocalDateTime.of(Integer.parseInt(data.split("-")[0]), Integer.parseInt(data.split("-")[1]), Integer.parseInt(data.split("-")[2]), horario, 0);
         logger.log(Level.INFO, "cancelaReserva method was called.");
         return reservaUtility.removeReserva(hora, idPraia, idSombrinha);
     }
 
     public String listaSombrinhasDisponiveis(int horario, String data, String idPraia) throws RemoteException{
-        LocalDateTime horaFinal = LocalDateTime.of(Integer.parseInt(data.split("-")[0]), Integer.parseInt(data.split("-")[1]), Integer.parseInt(data.split("-")[2]), horario, 0);
+        // LocalDateTime hora
+        // String data format: Ex: 2020-12-31
+        // int horario format: Ex: 9
+        LocalDateTime hora = LocalDateTime.of(Integer.parseInt(data.split("-")[0]), Integer.parseInt(data.split("-")[1]), Integer.parseInt(data.split("-")[2]), horario, 0);
         logger.log(Level.INFO, "listaSombrinhasDisponiveis method was called.");
-        logger.log(Level.INFO, "hora: " + horaFinal);
+        logger.log(Level.INFO, "hora: " + hora);
         logger.log(Level.INFO, "idPraia: " + idPraia);
-        logger.log(Level.INFO, "listaSombrinhasDisponiveis: " + reservaUtility.listaSombrinhasDisponiveis2(horaFinal, idPraia));
-        return reservaUtility.listaSombrinhasDisponiveis2(horaFinal, idPraia);
+        logger.log(Level.INFO, "listaSombrinhasDisponiveis: " + reservaUtility.listaSombrinhasDisponiveis2(hora, idPraia));
+        return reservaUtility.listaSombrinhasDisponiveis2(hora, idPraia);
     }
 
     public String getReservasTable() throws RemoteException{

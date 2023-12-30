@@ -30,10 +30,7 @@ public class TestStuff {
     public void testRentalsReserva() throws RemoteException {
         RentalsServerImpl rentalsServerImpl = new RentalsServerImpl();
         System.out.println(LocalDateTime.now());
-        rentalsServerImpl.reservaSombrinha(LocalDateTime.of(
-                        2024, 12, 31, 9, 0),
-                        "A",
-                        1);
+        rentalsServerImpl.reservaSombrinha(8, "2024-12-12", "A", 1);
     }
     //Construtor da reverva utility
 
