@@ -9,7 +9,7 @@ public interface RentalsServerIntf extends Remote{
     String listAllMethods() throws RemoteException;
     int reservaSombrinha(LocalDateTime hora, String idPraia, int id_sombrinha) throws RemoteException;
     int cancelaReserva(LocalDateTime hora , String idPraia, int idSombrinha) throws RemoteException;
-    ArrayList<String> listaSombrinhasDisponiveis(LocalDateTime hora , String idPraia) throws RemoteException;
+    String listaSombrinhasDisponiveis(int horario, String data, String idPraia) throws RemoteException;
     String getReservasTable() throws RemoteException;
 }
 

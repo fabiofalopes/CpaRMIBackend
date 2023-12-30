@@ -256,3 +256,169 @@ Dec 28, 2023 4:16:28 PM Server.RentalsServerImpl reservaSombrinha
 INFO: reservaSombrinha method was called.
 Dec 28, 2023 4:16:28 PM Server.RentalsServerImpl reservaSombrinha
 INFO: reservaSombrinha method was called.
+Dec 28, 2023 7:37:14 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 28, 2023 7:37:14 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 28, 2023 7:37:14 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 28, 2023 7:37:14 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 29, 2023 11:30:33 AM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 11:35:37 AM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 11:37:33 AM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 11:39:14 AM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 11:42:39 AM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 11:45:16 AM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 29, 2023 11:45:16 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 29, 2023 11:45:16 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 29, 2023 11:45:16 AM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 29, 2023 11:57:28 AM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 11:59:07 AM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 29, 2023 12:24:50 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 12:25:45 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 12:40:01 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 12:40:40 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 29, 2023 12:47:28 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 1:04:06 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 1:04:06 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T08:00
+Dec 29, 2023 1:04:06 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 1:05:05 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 1:05:05 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T08:00
+Dec 29, 2023 1:05:05 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 1:05:05 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: [A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20]
+Dec 29, 2023 1:06:01 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 1:06:01 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T08:00
+Dec 29, 2023 1:06:01 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 2:34:50 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 2:34:50 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T08:00
+Dec 29, 2023 2:34:50 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 2:55:20 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 2:55:20 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T10:00
+Dec 29, 2023 2:55:20 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 2:55:20 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: A1:A2:A3:A4:A5:A6:A7:A8:A9:A10:A11:A12:A13:A14:A15:A16:A17:A18:A19:A20:
+Dec 29, 2023 6:55:42 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 29, 2023 6:55:42 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 29, 2023 6:55:42 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 29, 2023 6:55:42 PM Server.RentalsServerImpl reservaSombrinha
+INFO: reservaSombrinha method was called.
+Dec 29, 2023 7:01:52 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 7:01:52 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T10:00
+Dec 29, 2023 7:01:52 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 7:01:52 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: A1:A2:A3:A4:A5:A6:A7:A8:A9:A10:A11:A12:A13:A14:A15:A16:A17:A18:A19:A20:
+Dec 29, 2023 7:13:47 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 7:13:47 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T10:00
+Dec 29, 2023 7:13:47 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 7:13:47 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: A1:A2:A3:A4:A5:A6:A7:A8:A9:A10:A11:A12:A13:A14:A15:A16:A17:A18:A19:A20:
+Dec 29, 2023 7:53:46 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 7:53:46 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T10:00
+Dec 29, 2023 7:53:46 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 7:53:46 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: A1:A2:A3:A4:A5:A6:A7:A8:A9:A10:A11:A12:A13:A14:A15:A16:A17:A18:A19:A20:
+Dec 29, 2023 7:55:21 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 7:55:21 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T10:00
+Dec 29, 2023 7:55:21 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 7:55:21 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: A1:A2:A3:A4:A5:A6:A7:A8:A9:A10:A11:A12:A13:A14:A15:A16:A17:A18:A19:A20:
+Dec 29, 2023 8:02:10 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 29, 2023 8:02:10 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 8:02:10 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T10:00
+Dec 29, 2023 8:02:10 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 8:02:10 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: A1:A2:A3:A4:A5:A6:A7:A8:A9:A10:A11:A12:A13:A14:A15:A16:A17:A18:A19:A20:
+Dec 29, 2023 8:04:18 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 29, 2023 8:04:18 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 8:04:18 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T10:00
+Dec 29, 2023 8:04:18 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 8:04:18 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: A1:A2:A3:A4:A5:A6:A7:A8:A9:A10:A11:A12:A13:A14:A15:A16:A17:A18:A19:A20:
+Dec 29, 2023 8:06:10 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 29, 2023 8:07:37 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 29, 2023 8:07:37 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 29, 2023 8:07:37 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T10:00
+Dec 29, 2023 8:07:37 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 29, 2023 8:07:37 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: A1:A2:A3:A4:A5:A6:A7:A8:A9:A10:A11:A12:A13:A14:A15:A16:A17:A18:A19:A20:
+Dec 30, 2023 4:06:10 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 30, 2023 4:06:10 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 30, 2023 4:06:10 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T10:00
+Dec 30, 2023 4:06:10 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 30, 2023 4:06:10 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: A1:A2:A3:A4:A5:A6:A7:A8:A9:A10:A11:A12:A13:A14:A15:A16:A17:A18:A19:A20:
+Dec 30, 2023 4:24:43 PM Server.RentalsServerImpl testRMI
+INFO: testRMI method was called.
+Dec 30, 2023 4:24:44 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis method was called.
+Dec 30, 2023 4:24:44 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: hora: 2024-12-12T10:00
+Dec 30, 2023 4:24:44 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: idPraia: A
+Dec 30, 2023 4:24:44 PM Server.RentalsServerImpl listaSombrinhasDisponiveis
+INFO: listaSombrinhasDisponiveis: A1:A2:A3:A4:A5:A6:A7:A8:A9:A10:A11:A12:A13:A14:A15:A16:A17:A18:A19:A20:

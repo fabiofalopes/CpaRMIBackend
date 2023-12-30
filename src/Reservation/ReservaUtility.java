@@ -172,6 +172,40 @@ public class ReservaUtility {
         }
         return sombrinhasDisponiveis;
     }
+    public String listaSombrinhasDisponiveis2(LocalDateTime hora , String idPraia) {
+        String sombrinhasDisponiveis = "";
+        final int[] idSombrinhas_PraiaA = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+        final int[] idSombrinhas_PraiaB = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ,15 };
+        final int[] idSombrinhas_PraiaC = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        switch (idPraia) {
+            case "A" -> {
+                for (int j : idSombrinhas_PraiaA) {
+                    if (verificarDisponibilidade(hora, idPraia, j)) {
+                        //sombrinhasDisponiveis.add("A" + j);
+                        sombrinhasDisponiveis += "A" + j + ":"; //.append("A").append(j).append(":");
+                    }
+                }
+            }
+            case "B" -> {
+                for (int j : idSombrinhas_PraiaB) {
+                    if (verificarDisponibilidade(hora, idPraia, j)) {
+                        //sombrinhasDisponiveis.toString().add("B" + j);
+                        sombrinhasDisponiveis += "B" + j + ":";
+                    }
+                }
+            }
+            case "C" -> {
+                for (int j : idSombrinhas_PraiaC) {
+                    if (verificarDisponibilidade(hora, idPraia, j)) {
+                        //sombrinhasDisponiveis.toString().add("C" + j);
+                        sombrinhasDisponiveis += "C" + j + ":";
+                    }
+                }
+            }
+        }
+        assert sombrinhasDisponiveis != null;
+        return sombrinhasDisponiveis.isEmpty() ? "Não existem sombrinhas disponíveis para a data e hora indicadas." : sombrinhasDisponiveis;
+    }
     public String toStringTable() {
         // Devolve String com uma tabela ordenada por datas de marcação
         TreeMap<LocalDateTime, Reserva> newMap = new TreeMap<>();

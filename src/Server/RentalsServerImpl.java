@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class RentalsServerImpl extends UnicastRemoteObject  implements RentalsServerIntf {
-
     ReservaUtility reservaUtility;
 
     public RentalsServerImpl() throws RemoteException {
@@ -62,13 +61,16 @@ public class RentalsServerImpl extends UnicastRemoteObject  implements RentalsSe
         return reservaUtility.removeReserva(hora, idPraia, idSombrinha);
     }
 
-    public ArrayList<String> listaSombrinhasDisponiveis(LocalDateTime hora , String idPraia) throws RemoteException{
+    public String listaSombrinhasDisponiveis(int horario, String data, String idPraia) throws RemoteException{
+        LocalDateTime horaFinal = LocalDateTime.of(Integer.parseInt(data.split("-")[0]), Integer.parseInt(data.split("-")[1]), Integer.parseInt(data.split("-")[2]), horario, 0);
         logger.log(Level.INFO, "listaSombrinhasDisponiveis method was called.");
-        return reservaUtility.listaSombrinhasDisponiveis(hora, idPraia);
+        logger.log(Level.INFO, "hora: " + horaFinal);
+        logger.log(Level.INFO, "idPraia: " + idPraia);
+        logger.log(Level.INFO, "listaSombrinhasDisponiveis: " + reservaUtility.listaSombrinhasDisponiveis2(horaFinal, idPraia));
+        return reservaUtility.listaSombrinhasDisponiveis2(horaFinal, idPraia);
     }
 
     public String getReservasTable() throws RemoteException{
         return reservaUtility.toStringTable();
     }
-
 }
