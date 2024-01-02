@@ -137,7 +137,15 @@ public class TestStuff {
     @Test
     public void testStringListaSombrinhasDisponiveis() throws RemoteException {
         RentalsServerImpl rentalsServerImpl = new RentalsServerImpl();
-        //System.out.println(rentalsServerImpl.listaSombrinhasDisponiveis(LocalDateTime.of(2024, 12, 12, 8, 0), "A"));
+        System.out.println(rentalsServerImpl.listaSombrinhasDisponiveis(9,"2024-12-3" , "A"));
     }
+
+    // test getTabelaDisponibilidadeDia via RentalsServerImpl
+    @Test
+    public void testGetTabelaDisponibilidadeDia() throws RemoteException {
+        RentalsServerImpl rentalsServerImpl = new RentalsServerImpl();
+        System.out.println(rentalsServerImpl.getTabelaOcupacaoDia("2024-12-12", "A"));
+    }
+
 
 }

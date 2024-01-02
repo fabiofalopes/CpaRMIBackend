@@ -15,6 +15,9 @@ package Reservation;
  */
 
 public class Sombrinha {
+    public static final int MAX_SOMBRINHAS_PRAIA_A = 20;
+    public static final int MAX_SOMBRINHAS_PRAIA_B = 11;
+    public static final int MAX_SOMBRINHAS_PRAIA_C = 10;
     private final String idPraia;
     private final int idSombrinha;
     private final int maxPessoas;
@@ -27,16 +30,16 @@ public class Sombrinha {
             throw new IllegalArgumentException("Invalid idSombrinha. Tem que ser maior que 0.");
         }
         // Se for Praia A temos 20 sombrinhas
-        if (idPraia.equals("A") && idSombrinha > 20) {
-            throw new IllegalArgumentException("Invalid idSombrinha. Praia A só tem 20 sombrinhas.");
+        if (idPraia.equals("A") && idSombrinha > MAX_SOMBRINHAS_PRAIA_A) {
+            throw new IllegalArgumentException("Invalid idSombrinha. Praia A só tem " + MAX_SOMBRINHAS_PRAIA_A + " sombrinhas.");
         }
         // Se for Praia B temos 11 sombrinhas
-        if (idPraia.equals("B") && idSombrinha > 11) {
-            throw new IllegalArgumentException("Invalid idSombrinha. Praia B só tem 11 sombrinhas.");
+        if (idPraia.equals("B") && idSombrinha > MAX_SOMBRINHAS_PRAIA_B) {
+            throw new IllegalArgumentException("Invalid idSombrinha. Praia B só tem " + MAX_SOMBRINHAS_PRAIA_B + "sombrinhas.");
         }
         // Se for Praia C temos 10 sombrinhas
-        if (idPraia.equals("C") && idSombrinha > 10) {
-            throw new IllegalArgumentException("Invalid idSombrinha. Praia C só tem 10 sombrinhas.");
+        if (idPraia.equals("C") && idSombrinha > MAX_SOMBRINHAS_PRAIA_C) {
+            throw new IllegalArgumentException("Invalid idSombrinha. Praia C só tem " + MAX_SOMBRINHAS_PRAIA_C + " sombrinhas.");
         }
 
         this.idPraia = idPraia;

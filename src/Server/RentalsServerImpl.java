@@ -69,6 +69,11 @@ public class RentalsServerImpl extends UnicastRemoteObject  implements RentalsSe
         return reservaUtility.removeReserva(hora, idPraia, idSombrinha);
     }
 
+    public int cancelaReserva(int idReserva) throws RemoteException{
+        logger.log(Level.INFO, "cancelaReserva method was called.");
+        return reservaUtility.removeReserva(idReserva);
+    }
+
     public String listaSombrinhasDisponiveis(int horario, String data, String idPraia) throws RemoteException{
         // LocalDateTime hora
         // String data format: Ex: 2020-12-31
@@ -77,11 +82,25 @@ public class RentalsServerImpl extends UnicastRemoteObject  implements RentalsSe
         logger.log(Level.INFO, "listaSombrinhasDisponiveis method was called.");
         logger.log(Level.INFO, "hora: " + hora);
         logger.log(Level.INFO, "idPraia: " + idPraia);
-        logger.log(Level.INFO, "listaSombrinhasDisponiveis: " + reservaUtility.listaSombrinhasDisponiveis2(hora, idPraia));
-        return reservaUtility.listaSombrinhasDisponiveis2(hora, idPraia);
+        logger.log(Level.INFO, "listaSombrinhasDisponiveis\n" + reservaUtility.listaSombrinhasDisponiveis3(hora, idPraia));
+        return reservaUtility.listaSombrinhasDisponiveis3(hora, idPraia);
     }
 
     public String getReservasTable() throws RemoteException{
         return reservaUtility.toStringTable();
+    }
+
+    public String getTabelaOcupacaoDia(String data, String idPraia) throws RemoteException{
+        // LocalDateTime hora
+        // String data format: Ex: 2020-12-31
+        LocalDateTime hora = LocalDateTime.of(Integer.parseInt(data.split("-")[0]),
+                                            Integer.parseInt(data.split("-")[1]),
+                                            Integer.parseInt(data.split("-")[2]),
+                                            0, 0);
+        logger.log(Level.INFO, "getTabelagetTabelaOcupacaoDia method was called.");
+        logger.log(Level.INFO, "hora: " + hora);
+        logger.log(Level.INFO, "idPraia: " + idPraia);
+        logger.log(Level.INFO, "getTabelagetTabelaOcupacaoDiaDia\n" + reservaUtility.toStringTableDaylyCounter(hora, idPraia));
+        return reservaUtility.toStringTableDaylyCounter(hora, idPraia);
     }
 }
